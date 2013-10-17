@@ -1,0 +1,440 @@
+@-ms-keyframes spin {
+    from { -ms-transform: rotate(0deg); }
+    to { -ms-transform: rotate(360deg); }
+}
+@-moz-keyframes spin {
+    from { -moz-transform: rotate(0deg); }
+    to { -moz-transform: rotate(360deg); }
+}
+@-webkit-keyframes spin {
+    from { -webkit-transform: rotate(0deg); }
+    to { -webkit-transform: rotate(360deg); }
+}
+@keyframes spin {
+    from {
+        transform:rotate(0deg);
+    }
+    to {
+        transform:rotate(360deg);
+    }
+}
+
+* {
+	padding: 0;
+	margin: 0;
+}
+*, *:before, *:after {
+	-moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box;
+}
+html,body
+{
+	width: 100%;
+	height: 100%;
+	overflow-x: hidden;
+	background-color: #222;
+}
+body
+{
+	background: url('../img/trey-ratcliff-milford10.jpg') no-repeat center center #222;
+	background-size: cover;
+	font-size: 13px;
+	font-family: 'Open Sans', sans-serif;
+}
+.container-fluid
+{
+	margin: 0;
+	padding: 0;
+}
+.clock
+{
+	display: inline-block;
+	color: #fff;
+	margin-right: 40px;
+	opacity: 0.75;
+	line-height: 20px;
+	vertical-align: top;
+	-webkit-touch-callout: none;
+	-webkit-user-select: none;
+	-khtml-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+	cursor: default;
+}
+.clock:hover
+{
+	opacity: 1;
+}
+.clock span
+{
+	padding: 0 2px;
+}
+.weather {
+	text-align: center;
+	text-transform: uppercase;
+	font-family: 'Open Sans', sans-serif;
+	position: relative;
+	-webkit-touch-callout: none;
+	-webkit-user-select: none;
+	-khtml-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+	cursor: default;
+	z-index: 1;
+}
+.weather img
+{
+	margin: 0;
+	padding: 0;
+	position: absolute;
+	top: 25px;
+	left: 35%;
+}
+.weather h2 {
+	margin: 0;
+	padding: 0;
+	color: #fff;
+	font-size: 150px;
+	font-weight: 300;
+	text-align: center;
+	text-shadow: 0px 1px 3px rgba(0, 0, 0, 0.35);
+	line-height: 150px;
+	padding-top: 75px;
+	z-index: 2;
+	position: relative;
+}
+.weather ul {
+	margin: 0;
+	padding: 0;
+}
+
+.weather li {
+	background: #fff;
+	background: rgba(255,255,255,0.65);
+	padding: 20px;
+	display: inline-block;
+	border-radius: 5px;
+	margin-right: 20px;
+}
+.weather li:last-child {
+	margin: 0;
+}
+
+.bookmarks ul
+{
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	width: 1000px;
+}
+.bookmarks ul a
+{
+	color: #fff;
+	font-size: 14px;
+	line-height: 30px;
+	display: block;
+	width: 100%;
+}
+.bookmarks ul a:hover
+{
+	text-decoration: none;
+}
+.bookmarks ul a i
+{
+	margin-right: 8px;
+	opacity: 0.5;
+}
+.bookmarks ul a:hover i
+{
+	opacity: 1;
+}
+.bookmarks h4
+{
+	font-weight: 300;
+	font-size: 24px;
+	line-height: 36px;
+	margin: 0;
+	padding: 0;
+	margin-top: 15px;
+}
+.bookmarks h4:first-child
+{
+	margin-top: 0;
+}
+.blur
+{
+	-webkit-filter: blur(5px);
+    -moz-filter: blur(5px);
+    -o-filter: blur(5px);
+    -ms-filter: blur(5px);
+    filter: blur(5px);
+}
+.fade-container
+{
+	display: none;
+	padding: 10px;
+	margin-top: 40px;
+	-webkit-border-radius: 20px;
+	-moz-border-radius: 20px;
+	border-radius: 20px;
+	min-width: 50%;
+	max-width: 75%;
+	color: #fff;
+	overflow: hidden;
+	background: rgba(0,0,0,.35);
+	-webkit-transition: all 0.2s ease-in-out;
+    -moz-transition: all 0.2s ease-in-out;
+    -o-transition: all 0.2s ease-in-out;
+    -ms-transition: all 0.2s ease-in-out;
+    transition: all 0.2s ease-in-out;
+    -webkit-transform: translate3d(0,0,0);
+	-moz-transform: translate3d(0,0,0);
+	-ms-transform: translate3d(0,0,0);
+	-o-transform: translate3d(0,0,0);
+	transform: translate3d(0,0,0);
+	border: 30px solid transparent;
+	-webkit-overflow-scrolling: touch;
+	min-height: 250px;
+	position: relative;
+}
+.content
+{
+	position: relative;
+}
+.content .close
+{
+	position: absolute;
+	top: 55px;
+	color: #fff;
+	opacity: .25;
+	display: none;
+	z-index: 100;
+}
+.content .close:hover
+{
+	opacity: 1;
+}
+.menu-icons
+{
+	padding: 20px;
+	width: 100%;
+	text-align: right;
+	z-index: 100;
+	position: relative;
+}
+.menu-icons a
+{
+	color: #FFF;
+	font-size: 18px;
+	padding: 7px;
+	opacity: 0.65;
+	z-index: 100;
+}
+.menu-icons a:hover
+{
+	text-decoration: none;
+}
+.menu-icons a.active
+{
+	opacity: 1;
+}
+.refresh
+{
+	width: 30px;
+	height: 30px;
+	-webkit-transform: translate3d(0,0,0);
+	-moz-transform: translate3d(0,0,0);
+	-ms-transform: translate3d(0,0,0);
+	-o-transform: translate3d(0,0,0);
+	transform: translate3d(0,0,0);
+	position: absolute;
+	top: 15px;
+	right: 87px;
+	line-height: 15px;
+	text-align: center;
+}
+.refresh i
+{
+	margin-left: -1px;
+}
+.spin
+{
+    -webkit-animation-name: spin;
+    -webkit-animation-duration: 500ms;
+    -webkit-animation-iteration-count: 1;
+    -webkit-animation-timing-function: linear;
+    -moz-animation-name: spin;
+    -moz-animation-duration: 500ms;
+    -moz-animation-iteration-count: 1;
+    -moz-animation-timing-function: linear;
+    -ms-animation-name: spin;
+    -ms-animation-duration: 500ms;
+    -ms-animation-iteration-count: 1;
+    -ms-animation-timing-function: linear;
+
+    animation-name: spin;
+    animation-duration: 500ms;
+    animation-iteration-count: 1;
+    animation-timing-function: linear;
+}
+
+.submenu
+{
+	display: none;
+	position: absolute;
+	width: 100%;
+	right: 43px;
+	top: 50px;
+	width: 100%;
+	-webkit-transform: translate3d(0,0,0);
+	-moz-transform: translate3d(0,0,0);
+	-ms-transform: translate3d(0,0,0);
+	-o-transform: translate3d(0,0,0);
+	transform: translate3d(0,0,0);
+}
+.submenu a
+{
+	font-size: 40px;
+	z-index: 50;
+}
+
+.rssFeed ul
+{
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+.rssFeed li
+{
+	margin-top: 25px;
+}
+.rssFeed li:first-child
+{
+	margin-top: 0;
+}
+.rssFeed h4 a
+{
+	color: #FFF;
+	text-decoration: none;
+	font-weight: 300;
+	font-size: 20px;
+	line-height: 24px;
+}
+.rssRow div
+{
+	opacity: 0.35;
+}
+.rssRow p
+{
+	opacity: 0.6;
+	color: #FFF;
+}
+
+/* Large desktop */
+@media (min-width: 1200px) {
+
+}
+
+@media (min-width: 979px) and (max-width: 1024px) {
+	.optional
+	{
+		display: none !important;
+	}
+	.fade-container
+	{
+		max-width: 90%;
+	}
+}
+
+/* Portrait tablet to landscape and desktop */
+@media (min-width: 768px) and (max-width: 979px) {
+	.optional
+	{
+		display: none !important;
+	}
+	.fade-container
+	{
+		max-width: 90%;
+	}
+}
+
+/* Landscape phone to portrait tablet */
+@media (max-width: 767px) {
+	.menu-icons
+	{
+		padding-right: 0;
+	}
+	.fade-container
+	{
+		max-width: 100%;
+	}
+	.submenu
+	{
+		top: 60px;
+		right: 16px;
+	}
+	.optional
+	{
+		display: none !important;
+	}
+	.refresh
+	{
+		right: 35px !important;
+	}
+	.toggle-fullscreen
+	{
+		display: none;
+	}
+}
+
+/* Landscape phones and down */
+@media (max-width: 480px) {
+	.weather img
+	{
+		margin: 0;
+		padding: 0;
+		position: absolute;
+		top: 25px;
+		left: 35%;
+	}
+	.weather h2 {
+		font-size: 100px;
+		line-height: 100px;
+		padding-top: 75px;
+	}
+
+	.weather li {
+		background: #fff;
+		background: rgba(255,255,255,0.50);
+		padding: 12px;
+		display: inline-block;
+		border-radius: 5px;
+		margin-right: 12px;
+	}
+	.fade-container
+	{
+		max-width: 100%;
+	}
+	.menu-icons
+	{
+		padding-right: 0;
+	}
+	.submenu
+	{
+		top: 60px;
+		right: 16px;
+	}
+	.submenu a
+	{
+		font-size: 30px;
+	}
+	.refresh
+	{
+		right: 35px !important;
+	}
+	.toggle-fullscreen
+	{
+		display: none;
+	}
+}
