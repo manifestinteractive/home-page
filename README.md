@@ -34,7 +34,7 @@ I have built this to run as a fullscreen app for those that might have an extra 
 Responsive Design & Mobile Friendly
 ---
 
-Great care was taken to make sure this worked on iOS & Android as well as varying Desktop screens.  In fact, if you are using iOS, you can add this app to your home screen and you'll get some nice icons and splash screens at launch.  I've also mimiced the iOS 7 3D wallpaper image so you can have fun playing with that.  If you hate it, that's cool too.  Just change the `use_ios7_bg_animate` in ./js/script.js to false and its gone.
+Great care was taken to make sure this worked on iOS & Android as well as varying Desktop screens.  In fact, if you are using iOS, you can add this app to your home screen and you'll get some nice icons and splash screens at launch.  I've also mimicked the iOS 7 3D wallpaper image so you can have fun playing with that.  If you hate it, that's cool too.  Just change the `use_ios7_bg_animate` in ./js/script.js to false and its gone.
 
 Keyboard Shortcuts
 ---
