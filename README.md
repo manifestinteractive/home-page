@@ -1,4 +1,4 @@
-Home Page ( source code for my custom home page )
+Home Page ( [Example](http://home.peterschmalfeldt.com) )
 =========
 
 This was a fun side project in preparation for the departure of iGoogle that I have been using as my home page for over 7 years.  It's setup as an aggregator of news, weather and bookmarks.  You should be able to take what I did here, and if you like it, make it into something useful for yourself.
@@ -12,7 +12,7 @@ Hit me up with questions or comments [@mrmidi](http://twitter.com/mrmidi)
 
 ![Sample 2](https://raw.github.com/manifestinteractive/home-page/master/img/sample/sample2.jpg "Sample 2")
 
-Image created and owned by [Trey Ratcliff](http://www.stuckincustoms.com/trey-ratcliff/)
+** Background Image created, owned & all rights reserved by [Trey Ratcliff](http://www.stuckincustoms.com/trey-ratcliff/)
 
 Demo URL
 ---
