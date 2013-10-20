@@ -527,7 +527,7 @@ $(document).ready(function() {
 	}
 
 	// Get everything setup
-	setInterval(load_data, 60000);
+	setInterval(function(){ $('.refresh').trigger('click'); }, 60000);
 	setTimeout(load_data, 500);
 
 	// Start Clock
