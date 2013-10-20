@@ -398,6 +398,8 @@ $(document).ready(function() {
 		$('.fade-container').not(myclass).stop().hide();
 		$('.content .close').hide();
 
+		$('.watermark').removeClass('watermark_bookmarks watermark_google watermark_github watermark_linkedin watermark_twitter watermark_newsfeed');
+
 		if($(this).hasClass('active'))
 		{
 			$(myclass, '.content').stop().fadeIn('fast').removeClass('blur').css({'display': 'inline-block'}).animate({ scrollTop: '0' }, 0);
@@ -405,6 +407,8 @@ $(document).ready(function() {
 			$('.content .close').css({
 				left: ( $('.content .fade-container:visible').width() + 45 ) + 'px'
 			});
+
+			setTimeout(function(){ $('.watermark').addClass('watermark_' + myclass.replace('.', '')); }, 250 );
 		}
 		else
 		{
@@ -413,6 +417,9 @@ $(document).ready(function() {
 		}
 
 		window.location.href = anchor;
+
+		// Now that the page is donw loading, lets trigger the initial resize
+		$(window).trigger('resize');
 
 		return false;
 	});
@@ -423,14 +430,11 @@ $(document).ready(function() {
 		$('.content .fade-container').stop().addClass('blur').fadeOut('fast');
 		$('.content .close').stop().hide();
 
+		$('.watermark').removeClass('watermark_bookmarks watermark_google watermark_github watermark_linkedin watermark_twitter watermark_newsfeed');
+
 		window.location.href = '#top';
 
 		return false;
-	});
-
-	// Now that the page is loaded, figure out how tall the container can be
-	$('.fade-container').css({
-		height: ($(document).height() - 200) + 'px'
 	});
 
 	// We don't want to show the scrollbars, but we want them to be scrollable
@@ -448,6 +452,17 @@ $(document).ready(function() {
 
 		$('.content .close').css({
 			left: ( $('.content .fade-container:visible').width() + 45 ) + 'px'
+		});
+
+		var content_width = $('.content').width(),
+			container_width = $('.content .fade-container:visible').width(),
+			font_width = container_width * 0.5,
+			bg_right = (content_width-container_width) + (container_width / 2) - ( font_width / 2 );
+
+		$('.watermark').css({
+			'right': bg_right + 'px',
+			'font-size': font_width + 'px',
+			'top': 100 + ( container_width / 2 ) + 'px'
 		});
 
 		window.scrollTo(0, 1);

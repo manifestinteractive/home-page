@@ -438,3 +438,35 @@ body
 		display: none;
 	}
 }
+
+.watermark {
+	font-family: FontAwesome;
+	font-style: normal;
+	font-weight: normal;
+	text-decoration: none;
+	color: rgba(255,255,255,0.15);
+	font-size: 200px;
+	position: fixed;
+	top: 300px;
+	right: 20%;
+	text-align: center;
+	z-index: 0;
+}
+.watermark_bookmarks:before {
+	content: "\f02E";
+}
+.watermark_google:before {
+	content: "\f0D4";
+}
+.watermark_github:before {
+	content: "\f092";
+}
+.watermark_linkedin:before {
+	content: "\f08C";
+}
+.watermark_twitter:before {
+	content: "\f081";
+}
+.watermark_newsfeed:before {
+	content: "\f143";
+}
