@@ -190,6 +190,9 @@ function load_data()
 			limit: 20,
 			header: false,
 			linktarget: '_blank'
+		},
+		function(){
+			$('.content .google').prepend('<a name="google"></a>');
 		}
 	);
 
@@ -200,6 +203,9 @@ function load_data()
 			limit: 20,
 			header: false,
 			linktarget: '_blank'
+		},
+		function(){
+			$('.content .github').prepend('<a name="google"></a>');
 		}
 	);
 
@@ -210,6 +216,9 @@ function load_data()
 			limit: 20,
 			header: false,
 			linktarget: '_blank'
+		},
+		function(){
+			$('.content .linkedin').prepend('<a name="google"></a>');
 		}
 	);
 
@@ -220,6 +229,9 @@ function load_data()
 			limit: 20,
 			header: false,
 			linktarget: '_blank'
+		},
+		function(){
+			$('.content .twitter').prepend('<a name="google"></a>');
 		}
 	);
 
@@ -230,6 +242,9 @@ function load_data()
 			limit: 20,
 			header: false,
 			linktarget: '_blank'
+		},
+		function(){
+			$('.content .newsfeed').prepend('<a name="google"></a>');
 		}
 	);
 }
@@ -344,6 +359,8 @@ $(document).ready(function() {
 
 		hide_menu = setTimeout(function(){ $('.submenu').fadeOut('slow'); }, window.timeout);
 
+		window.location.href = '#top';
+
 		return false;
 	});
 
@@ -376,12 +393,14 @@ $(document).ready(function() {
 			myclass = myclass.replace('nobounce', '');
 			myclass = '.' + myclass.replace(' ', '');
 
+		var anchor = myclass.replace('.', '#');
+
 		$('.fade-container').not(myclass).stop().hide();
 		$('.content .close').hide();
 
 		if($(this).hasClass('active'))
 		{
-			$(myclass, '.content').stop().fadeIn('fast').removeClass('blur').css({'display': 'inline-block'});
+			$(myclass, '.content').stop().fadeIn('fast').removeClass('blur').css({'display': 'inline-block'}).animate({ scrollTop: '0' }, 0);
 			$('.content .close').fadeIn('slow');
 			$('.content .close').css({
 				left: ( $('.content .fade-container:visible').width() + 45 ) + 'px'
@@ -393,6 +412,8 @@ $(document).ready(function() {
 			$('.content .close').fadeOut('slow');
 		}
 
+		window.location.href = anchor;
+
 		return false;
 	});
 
@@ -401,6 +422,8 @@ $(document).ready(function() {
 		$('.submenu a').removeClass('active');
 		$('.content .fade-container').stop().addClass('blur').fadeOut('fast');
 		$('.content .close').stop().hide();
+
+		window.location.href = '#top';
 
 		return false;
 	});
@@ -433,16 +456,59 @@ $(document).ready(function() {
 	// Add Keyboard Shortcuts to avoid having to use the menu at all
 	if(use_keyboard_shortcuts)
 	{
-		Mousetrap.bind('1', function() { $('.submenu a.bookmarks').trigger('click'); });
-		Mousetrap.bind('2', function() { $('.submenu a.google').trigger('click'); });
-		Mousetrap.bind('3', function() { $('.submenu a.github').trigger('click'); });
-		Mousetrap.bind('4', function() { $('.submenu a.linkedin').trigger('click'); });
-		Mousetrap.bind('5', function() { $('.submenu a.twitter').trigger('click'); });
-		Mousetrap.bind('6', function() { $('.submenu a.newsfeed').trigger('click'); });
+		Mousetrap.bind('1', function(){ $('.submenu a.bookmarks').trigger('click'); });
+		Mousetrap.bind('2', function(){ $('.submenu a.google').trigger('click'); });
+		Mousetrap.bind('3', function(){ $('.submenu a.github').trigger('click'); });
+		Mousetrap.bind('4', function(){ $('.submenu a.linkedin').trigger('click'); });
+		Mousetrap.bind('5', function(){ $('.submenu a.twitter').trigger('click'); });
+		Mousetrap.bind('6', function(){ $('.submenu a.newsfeed').trigger('click'); });
 
-		Mousetrap.bind('r', function() { $('.refresh').trigger('click'); });
-		Mousetrap.bind('f', function() { $('.toggle-fullscreen').trigger('click'); });
-		Mousetrap.bind('m', function() { $('.menu-list').trigger('click'); });
+		Mousetrap.bind('c', function(){ $('.close').trigger('click'); });
+		Mousetrap.bind('r', function(){ $('.refresh').trigger('click'); });
+		Mousetrap.bind('f', function(){ $('.toggle-fullscreen').trigger('click'); });
+		Mousetrap.bind('m', function(){ $('.menu-list').trigger('click'); });
+
+		Mousetrap.bind('up', function(event){
+			var elem = $('.fade-container:visible'),
+				height = elem.height()*0.90;
+
+			elem.stop().animate({ scrollTop: '-='+height+'px' }, 750);
+			event.stopPropagation();
+			event.preventDefault();
+		});
+
+		Mousetrap.bind('down', function(event){
+			var elem = $('.fade-container:visible'),
+				height = elem.height()*0.90;
+
+			elem.stop().animate({ scrollTop: '+='+height+'px' }, 750);
+			event.stopPropagation();
+			event.preventDefault();
+		});
+
+		Mousetrap.bind('left', function(event){
+			$('.submenu a.active').prev().trigger('click');
+			event.stopPropagation();
+			event.preventDefault();
+		});
+
+		Mousetrap.bind('right', function(event){
+			$('.submenu a.active').next().trigger('click');
+			event.stopPropagation();
+			event.preventDefault();
+		});
+
+		Mousetrap.bind('home', function(event){
+			$('.fade-container:visible').stop().animate({ scrollTop: '0' }, 750);
+			event.stopPropagation();
+			event.preventDefault();
+		});
+
+		Mousetrap.bind('end', function(event){
+			$('.fade-container:visible').stop().animate({ scrollTop: $('.fade-container:visible')[0].scrollHeight + 'px' }, 750);
+			event.stopPropagation();
+			event.preventDefault();
+		});
 	}
 
 	// Get everything setup

@@ -48,9 +48,19 @@ You can use the following keyboard shortcuts to make things a little quicker:
 	5 = Open Twitter RSS Feed
 	6 = Open Technology RSS Feed
 
-	r = Refresh Data
+	c = Close Open Panel
 	f = Toggle Fullscreen
 	m = Toggle Menu
+	r = Refresh Data
+
+	Up = Scrolls Visible Panel Up
+	Down = Scrolls Visible Panel Down
+
+	Left = Jump to Previous Panel from Currently Active
+	Right = Jump to Next Panel from Currently Active
+
+	Home = Scrolls Visible Panel to Top
+	End = Scrolls Visible Panel to Bottom
 
 RSS Feeds
 ---
