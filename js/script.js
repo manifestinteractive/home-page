@@ -205,7 +205,7 @@ function load_data()
 			linktarget: '_blank'
 		},
 		function(){
-			$('.content .github').prepend('<a name="google"></a>');
+			$('.content .github').prepend('<a name="github"></a>');
 		}
 	);
 
@@ -218,7 +218,7 @@ function load_data()
 			linktarget: '_blank'
 		},
 		function(){
-			$('.content .linkedin').prepend('<a name="google"></a>');
+			$('.content .linkedin').prepend('<a name="linkedin"></a>');
 		}
 	);
 
@@ -231,7 +231,7 @@ function load_data()
 			linktarget: '_blank'
 		},
 		function(){
-			$('.content .twitter').prepend('<a name="google"></a>');
+			$('.content .twitter').prepend('<a name="twitter"></a>');
 		}
 	);
 
@@ -244,7 +244,7 @@ function load_data()
 			linktarget: '_blank'
 		},
 		function(){
-			$('.content .newsfeed').prepend('<a name="google"></a>');
+			$('.content .newsfeed').prepend('<a name="newsfeed"></a>');
 		}
 	);
 }
